@@ -1,0 +1,20 @@
+[package]
+authors = ["carlos alejandro gutierrez sandoval <calgusa@gmail.com>"]
+edition = "2018"
+name = "mass_py"
+version = "0.1.0"
+
+[lib]
+crate-type = ["cdylib"]
+name = "rust_ext"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mass = {path = '../mass'}
+ndarray = "*"
+numpy = "*"
+
+[dependencies.pyo3]
+features = ["extension-module"]
+version = "*"
