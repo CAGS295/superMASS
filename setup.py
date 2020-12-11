@@ -6,7 +6,7 @@ install_requires = ['numpy']
 test_requires = install_requires + ['pytest']
 
 setup(
-    name='mass_py',
+    name='superMass',
     description='Python bindings for the MASS algorithm implemented in rust.',
     license='MIT',
     version='0.1.0',
@@ -14,7 +14,7 @@ setup(
     author_email='calgusa@gmail.com',
     # url='https://github.com/CAGS295/reponame',
     #   download_url='https://github.com/user/reponame/archive/v_01.tar.gz',
-    keywords=['MASS', 'timeseries', 'pattern matching'],
+    keywords=['MASS', 'timeseries', 'pattern matching','similarity search'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
@@ -23,7 +23,7 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     rust_extensions=[RustExtension(
-        'mass_py.mass_rs',
+        'superMASS.mass_rs',
         './Cargo.toml',
     )],
     install_requires=install_requires,

@@ -3,7 +3,7 @@
 import numpy as np
 import pandas as pd
 import mass_ts as mts
-from mass_py import batched
+from superMASS import batched
 
 import tarfile
 
