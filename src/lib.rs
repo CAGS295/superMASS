@@ -30,6 +30,18 @@ fn mass_rs<'py>(_py: Python<'py>, m: &PyModule) -> PyResult<()> {
         (x.into_pyarray(py), y.into_pyarray(py))
     }
 
+    #[pyfn(m, "mass")]
+    fn mass<'py>(
+        py: Python<'py>,
+        ts: PyReadonlyArrayDyn<f64>,
+        query: PyReadonlyArrayDyn<f64>,
+    ) -> &'py PyArray1<f64> {
+        let ts = ts.as_slice().unwrap();
+        let query = query.as_slice().unwrap();
+        let a = mass::mass(ts, query);
+        a.into_pyarray(py)
+    }
+
     Ok(())
 }
 
