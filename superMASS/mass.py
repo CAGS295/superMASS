@@ -4,7 +4,7 @@ import numpy as np
 
 def batched(series: np.array, query: np.array, top_matches: int, batch_size: int, n_jobs: int) -> (np.array, np.array):
     """
-    MASS2 batch is a batch version of MASS2 that reduces overall memory usage,
+    MASS3 batch is a batch version of MASS3 that reduces overall memory usage,
     provides parallelization and enables you to find top K number of matches
     within the time series. The goal of using this implementation is for very
     large time series similarity search. The returned results are not sorted
