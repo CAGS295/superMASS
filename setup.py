@@ -6,15 +6,16 @@ install_requires = ['numpy']
 test_requires = install_requires + ['pytest']
 
 setup(
-    name='superMass',
+    name='superMASS',
     description='Python bindings for the MASS algorithm implemented in rust.',
     license='MIT',
     version='0.1.0',
-    author='Carlos Alejandro Gutiérrez Sandoval',
+    author='Carlos Gutiérrez et al.',
     author_email='calgusa@gmail.com',
-    # url='https://github.com/CAGS295/reponame',
+    url='https://github.com/superMASS/superMASS',
     #   download_url='https://github.com/user/reponame/archive/v_01.tar.gz',
-    keywords=['MASS', 'timeseries', 'pattern matching','similarity search'],
+    keywords=['MASS', 'time series', 'pattern matching',
+              'similarity search', 'python', 'rust'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
