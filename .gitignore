@@ -1,3 +1,5 @@
 /target
 Cargo.lock
-/python
+/**.egg-info
+**__pycache__
+**mass_rs*
