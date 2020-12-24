@@ -3,7 +3,7 @@ from .mass_rs import batched as __batched, mass as __mass
 import numpy as np
 
 
-def batched(series: np.array, query: np.array, top_matches: int, batch_size: int, n_jobs: int) -> (np.array, np.array):
+def batched(series: np.array, query: np.array, top_matches: int, batch_size: int) -> (np.array, np.array):
     """
     MASS3 batch is a batch version of MASS3 that reduces overall memory usage,
     provides parallelization and enables you to find top K number of matches
@@ -17,12 +17,11 @@ def batched(series: np.array, query: np.array, top_matches: int, batch_size: int
         query (np.array): a query for similarity search strided by one along [series]
         batch_size (int): split the search in this many slices; useful for parallelization
         top_matches (int): top nth matches to return.
-        n_jobs (int): parallelize search in this many jobs
 
     Returns:
         (np.array,np.array): 
     """
-    return __batched(series, query, batch_size, top_matches, n_jobs)
+    return __batched(series, query, batch_size, top_matches)
 
 
 def mass3(series: np.array, query: np.array) -> np.array:

@@ -7,8 +7,8 @@ mod tests {
 }
 
 use mass::mass_batch;
-use ndarray::{ArrayD, ArrayViewD, ArrayViewMutD};
-use numpy::{IntoPyArray, PyArray1, PyArrayDyn, PyReadonlyArrayDyn};
+
+use numpy::{IntoPyArray, PyArray1, PyReadonlyArrayDyn};
 use pyo3::prelude::{pymodule, PyModule, PyResult, Python};
 
 #[pymodule]
@@ -20,11 +20,10 @@ fn mass_rs<'py>(_py: Python<'py>, m: &PyModule) -> PyResult<()> {
         query: PyReadonlyArrayDyn<f64>,
         batch_size: usize,
         top_matches: usize,
-        jobs: usize,
     ) -> (&'py PyArray1<usize>, &'py PyArray1<f64>) {
         let ts = ts.as_slice().unwrap();
         let query = query.as_slice().unwrap();
-        let a = mass_batch(ts, query, batch_size, top_matches, jobs);
+        let a = mass_batch(ts, query, batch_size, top_matches);
         let (x, y): (Vec<_>, Vec<_>) = a.iter().cloned().unzip();
 
         (x.into_pyarray(py), y.into_pyarray(py))
