@@ -6,7 +6,7 @@ mod tests {
     }
 }
 
-use super_MASS::mass_batch;
+use super_mass::mass_batch;
 
 use numpy::{IntoPyArray, PyArray1, PyReadonlyArrayDyn};
 use pyo3::prelude::{pymodule, PyModule, PyResult, Python};
@@ -37,7 +37,7 @@ fn mass_rs<'py>(_py: Python<'py>, m: &PyModule) -> PyResult<()> {
     ) -> &'py PyArray1<f64> {
         let ts = ts.as_slice().unwrap();
         let query = query.as_slice().unwrap();
-        let a = super_MASS::mass(ts, query);
+        let a = super_mass::mass(ts, query);
         a.into_pyarray(py)
     }
 

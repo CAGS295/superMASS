@@ -13,7 +13,7 @@ name = "mass_py"
 [dependencies]
 ndarray = "*"
 numpy = "*"
-super_MASS = {path = '../super_MASS'}
+super_mass = {path = '../super_mass'}
 
 [dependencies.pyo3]
 features = ["extension-module"]
