@@ -11,9 +11,9 @@ name = "mass_py"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-mass = {path = '../mass'}
 ndarray = "*"
 numpy = "*"
+super_MASS = {path = '../super_MASS'}
 
 [dependencies.pyo3]
 features = ["extension-module"]
